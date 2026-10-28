@@ -3762,4 +3762,6 @@
     <string name="structured_storage_saving">正在保存…</string>
     <string name="structured_storage_save_failed">保存失败，之前的设置未更改。请检查日志后重试。</string>
     <string name="structured_storage_unavailable">此功能的数据未能加载。请检查迁移日志并重启微信重试。</string>
+    <string name="feature_wxai_companion_name">WXAI 数字生命伴侣</string>
+    <string name="feature_wxai_companion_description">隐身级 AI 自动回复、12 大微信 Agent 跨对话操控工具、多模态识图斗图、拟人多气泡分段、好感度档案与反思日记</string>
 </resources>

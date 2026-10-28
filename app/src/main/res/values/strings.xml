@@ -3730,4 +3730,6 @@
     <string name="structured_storage_saving">Saving…</string>
     <string name="structured_storage_save_failed">Could not save. Your previous settings are unchanged. Check the logs and try again.</string>
     <string name="structured_storage_unavailable">This feature’s data could not be loaded. Check the migration logs and restart WeChat to retry.</string>
+    <string name="feature_wxai_companion_name">WXAI Digital Life Companion</string>
+    <string name="feature_wxai_companion_description">Stealth AI auto-reply, 12 WeChat Agent tools, multimodal vision, multi-bubble typing, affection dossiers, and life diary</string>
 </resources>

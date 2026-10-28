@@ -3744,4 +3744,6 @@
     <string name="structured_storage_saving">正在儲存…</string>
     <string name="structured_storage_save_failed">儲存失敗，先前的設定未變更。請檢查記錄後重試。</string>
     <string name="structured_storage_unavailable">此功能的資料無法載入。請檢查遷移記錄並重新啟動微信重試。</string>
+    <string name="feature_wxai_companion_name">WXAI 數位生命伴侶</string>
+    <string name="feature_wxai_companion_description">隱身級 AI 自動回覆、12 大微信 Agent 跨對話操控工具、多模態識圖鬥圖、擬人多氣泡分段、好感度檔案與反思日記</string>
 </resources>
