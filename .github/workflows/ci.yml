@@ -116,24 +116,20 @@ jobs:
           ./x i18n-check
 
       - name: Decode keystore
-        if: github.event_name != 'pull_request' && secrets.KEYSTORE_BASE64 != ''
+        env:
+          KEYSTORE_BASE64: ${{ secrets.KEYSTORE_BASE64 }}
         run: |
-          echo "${{ secrets.KEYSTORE_BASE64 }}" | base64 -d > $RUNNER_TEMP/wekit-keystore.jks
+          if [ -n "$KEYSTORE_BASE64" ]; then
+            echo "$KEYSTORE_BASE64" | base64 -d > "$RUNNER_TEMP/wekit-keystore.jks"
+            echo "WEKIT_KEYSTORE_FILE=$RUNNER_TEMP/wekit-keystore.jks" >> "$GITHUB_ENV"
+          fi
 
-      - name: Build Release (Signed)
-        if: github.event_name != 'pull_request' && secrets.KEYSTORE_BASE64 != ''
+      - name: Build Release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          WEKIT_KEYSTORE_FILE: ${{ runner.temp }}/wekit-keystore.jks
           WEKIT_KEYSTORE_PASSWORD: ${{ secrets.KEYSTORE_PASSWORD }}
           WEKIT_KEY_ALIAS: ${{ secrets.KEY_ALIAS }}
           WEKIT_KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
-        run: ./x build --release
-
-      - name: Build Release (Unsigned)
-        if: github.event_name == 'pull_request' || secrets.KEYSTORE_BASE64 == ''
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: ./x build --release
 
       - name: Collect APKs
